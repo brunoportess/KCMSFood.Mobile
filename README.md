@@ -11,6 +11,8 @@ O que foi usado no desenvolvimento:
 ## Screenshots
 
 # Android
+APK (https://github.com/brunoportess/KCMSFood.Mobile/blob/master/com.brunoportes.kcms.apk)
+
 Video demonstrativo (https://youtu.be/RwYo-8cJp94)
 
 <img src="https://github.com/brunoportess/KCMSFood.Mobile/blob/master/Screenshots/imagem01.jpeg?w=250" height="450" width="200">
