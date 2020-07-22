@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="KCMSFood.Mobile.App">
+    <Application.Resources>
+        <Color x:Key="backgroundColor">#FFFFFFFF</Color>
+
+        <Color x:Key="PrimaryColor">#2384c6</Color>
+        <Color x:Key="PrimaryDarkColor">#004a8f</Color>
+        <Color x:Key="AccentColor">#c4161c</Color>
+
+        <Color x:Key="TextPrimaryColor">#B0000000</Color>
+        <Color x:Key="TextSecondaryColor">#80000000</Color>
+        <Color x:Key="TextTernaryColor">#C8C8C8</Color>
+
+        <Style x:Key="buttonStyle" TargetType="Button">
+            <Setter Property="BackgroundColor" Value="{StaticResource PrimaryColor}" />
+            <Setter Property="TextColor" Value="#ffffff" />
+            <Setter Property="FontAttributes" Value="Bold" />
+            <Setter Property="FontSize" Value="Large" />
+        </Style>
+    </Application.Resources>
+</Application>

@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="KCMSFood.Mobile.Views.CategoriesPage"
+             Title="Categorias"
+             Padding="10"
+             BackgroundColor="{StaticResource PrimaryColor}">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="ADICIONAR" IconImageSource="baseline_add_white_24.png" Command="{Binding AddCommand}" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <CollectionView
+            x:Name="collectionItems"
+            ItemsSource="{Binding CategoriesList}"
+            ItemsLayout="VerticalList"
+            EmptyView="Nenhum item para exibir!">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout Margin="10,5">
+                        <Frame CornerRadius="15" Padding="0"  HasShadow="True" IsClippedToBounds="True" BorderColor="{StaticResource PrimaryDarkColor}" >
+                            <SwipeView IsClippedToBounds="True">
+                                <SwipeView.RightItems>
+                                    <SwipeItems>
+                                        <SwipeItem Text="Editar"
+                                            IconImageSource="baseline_create_white_24.png"
+                                            BackgroundColor="LightGreen"
+                                            Command="{Binding Source={x:Reference collectionItems}, Path=BindingContext.EditCommand}"
+                                            CommandParameter="{Binding .}" />
+                                        <SwipeItem Text="Deletar"
+                                            IconImageSource="baseline_delete_white_24.png"
+                                            BackgroundColor="LightPink"
+                                            Command="{Binding Source={x:Reference collectionItems}, Path=BindingContext.DeleteCommand}"
+                                            CommandParameter="{Binding .}" />
+                                        <SwipeItem Text="Produtos"
+                                            BackgroundColor="Transparent"
+                                            IconImageSource="baseline_all_inbox_black_24.png"
+                                            Command="{Binding Source={x:Reference collectionItems}, Path=BindingContext.ProductsCommand}" 
+                                            CommandParameter="{Binding .}" />
+                                    </SwipeItems>
+                                </SwipeView.RightItems>
+                                <StackLayout BackgroundColor="{StaticResource PrimaryDarkColor}" Padding="10">
+                                    
+                                    <Label TextColor="#ffffff">
+                                        <Label.FormattedText>
+                                            <FormattedString>
+                                                <Span Text="Categoria: " FontAttributes="Bold" />
+                                                <Span Text="{Binding CategoryName}" />
+                                            </FormattedString>
+                                        </Label.FormattedText>
+                                    </Label>
+                                    <Label TextColor="#ffffff">
+                                        <Label.FormattedText>
+                                            <FormattedString>
+                                                <Span Text="Descrição: " FontAttributes="Bold" />
+                                                <Span Text="{Binding CategoryDescription}" />
+                                            </FormattedString>
+                                        </Label.FormattedText>
+                                    </Label>
+                                </StackLayout>
+                            </SwipeView>
+                        </Frame>
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </ContentPage.Content>
+</ContentPage>

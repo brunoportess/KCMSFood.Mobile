@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Shell xmlns="http://xamarin.com/schemas/2014/forms" 
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+       mc:Ignorable="d"
+       xmlns:local="clr-namespace:KCMSFood.Mobile.Views"
+       Title="KCMSFood.Mobile"
+       x:Class="KCMSFood.Mobile.AppShell">
+
+    <!-- 
+        Styles and Resources 
+    -->
+    <Shell.Resources>
+        <ResourceDictionary>
+
+            <Style x:Key="BaseStyle" TargetType="Element">
+                <Setter Property="Shell.BackgroundColor" Value="{StaticResource PrimaryDarkColor}" />
+                <Setter Property="Shell.ForegroundColor" Value="White" />
+                <Setter Property="Shell.TitleColor" Value="White" />
+                <Setter Property="Shell.DisabledColor" Value="#B4FFFFFF" />
+                <Setter Property="Shell.UnselectedColor" Value="#95FFFFFF" />
+                <Setter Property="Shell.TabBarBackgroundColor" Value="{StaticResource PrimaryDarkColor}" />
+                <Setter Property="Shell.TabBarForegroundColor" Value="White"/>
+                <Setter Property="Shell.TabBarUnselectedColor" Value="#95FFFFFF"/>
+                <Setter Property="Shell.TabBarTitleColor" Value="White"/>
+            </Style>
+            <Style TargetType="TabBar" BasedOn="{StaticResource BaseStyle}" />
+        </ResourceDictionary>
+    </Shell.Resources>
+
+    <!-- Your Pages -->
+    <TabBar Route="tabmain">
+        <Tab Title="Inicio" Icon="baseline_home_black_24.png" Route="tabhome">
+            <ShellContent ContentTemplate="{DataTemplate local:HomePage}" Route="home" />
+        </Tab>
+        <Tab Title="Categorias" Icon="baseline_view_list_black_24.png" Route="tabcategories">
+            <ShellContent ContentTemplate="{DataTemplate local:CategoriesPage}" Route="categories" />
+        </Tab>
+        <Tab Title="Produtos" Icon="baseline_all_inbox_white_48.png" Route="tabproducts">
+            <ShellContent ContentTemplate="{DataTemplate local:ProductsPage}" Route="products" />
+        </Tab>
+    </TabBar>
+</Shell>

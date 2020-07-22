@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="KCMSFood.Mobile.Views.HomePage"
+             BackgroundColor="{StaticResource PrimaryColor}"
+             Title="KCMS Food">
+    <ContentPage.Content>
+        <StackLayout Padding="20"
+                     VerticalOptions="CenterAndExpand">
+            <Label Text="O que deseja fazer hoje?"
+                   HorizontalOptions="CenterAndExpand"
+                   Margin="0,20"
+                   TextColor="#fff"
+                   FontAttributes="Bold"
+                   FontSize="Title"/>
+
+            <Frame
+                HasShadow="True"
+                Margin="0,10"
+                BackgroundColor="{StaticResource PrimaryDarkColor}"
+                >
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding NavigateCommand}" CommandParameter="CategoryFormViewModel" />
+                </Frame.GestureRecognizers>
+                <StackLayout
+                    HorizontalOptions="CenterAndExpand">
+                    <Image Source="baseline_view_list_white_48.png" />
+                    <Label TextColor="#fff" Text="Nova categoria" FontSize="Subtitle" FontAttributes="Bold" />
+                </StackLayout>
+            </Frame>
+            <Frame
+                Margin="0,10"
+                HasShadow="True"
+                BackgroundColor="{StaticResource PrimaryDarkColor}">
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding NavigateCommand}" CommandParameter="ProductFormViewModel" />
+                </Frame.GestureRecognizers>
+                <StackLayout
+                    HorizontalOptions="CenterAndExpand">
+                    <Image Source="baseline_all_inbox_white_48.png" />
+                    <Label TextColor="#fff" Text="Novo produto"  FontSize="Subtitle" FontAttributes="Bold"/>
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
