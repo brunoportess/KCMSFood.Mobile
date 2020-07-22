@@ -7,6 +7,7 @@ namespace KCMSFood.Mobile
 {
     public partial class App : Application
     {
+        // RECONHE LOCAL DO ARQUIVO DO SQLITE
         public static string DatabasePath => System.IO.Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.LocalApplicationData), "KcmsSqlite.db3");
 
         public static SQLiteAsyncConnection database;
@@ -17,6 +18,7 @@ namespace KCMSFood.Mobile
             Device.SetFlags(new[] {
                 "SwipeView_Experimental"
             });
+            // INICIALIZA O BANCO DE DADOS
             database = new SQLiteAsyncConnection(DatabasePath);
             MainPage = new AppShell();
         }

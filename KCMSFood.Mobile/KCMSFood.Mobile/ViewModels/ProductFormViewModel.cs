@@ -71,7 +71,7 @@ namespace KCMSFood.Mobile.ViewModels
             {
                 var list = await categoryDb.GetItemsAsync();
                 CategoriesList = list;
-                CategorySelected = CategoriesList.Where(c => c.CategoryId == Product.CategoryId).FirstOrDefault();
+                CategorySelected = Product.CategoryId > 0 ? CategoriesList.Where(c => c.CategoryId == Product.CategoryId).FirstOrDefault() : null;
             }
             catch (System.Exception e)
             {
@@ -82,15 +82,12 @@ namespace KCMSFood.Mobile.ViewModels
 
         async Task SaveCommandExecute()
         {
-            Debug.WriteLine(CategorySelected);
             if(CategorySelected != null)
             {
                 Product.CategoryId = CategorySelected.CategoryId;
                 Product.CategoryName = CategorySelected.CategoryName;
             }
-            Debug.WriteLine(Product);
             var response = await productDb.SaveItemAsync(Product);
-            Debug.WriteLine(response);
             var message = response == 1 ? "Item registrado com sucesso!" : "Ocorreu um erro ao salvar!";
             await DisplayAlert("Categoria", message, "OK");
             await Navigation.GoToRootAsync();

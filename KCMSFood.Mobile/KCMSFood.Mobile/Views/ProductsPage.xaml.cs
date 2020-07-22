@@ -16,6 +16,8 @@ namespace KCMSFood.Mobile.Views
 
         protected override void OnAppearing()
         {
+            // Metodo invocado para manter a listagem atualizada
+            // Procurar forma de otimizar para não duplicar processamento de listagem em algumas situações
             (this.BindingContext as ProductsViewModel)?.Initialize();
         }
     }

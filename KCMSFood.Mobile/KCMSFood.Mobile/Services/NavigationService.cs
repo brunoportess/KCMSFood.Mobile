@@ -35,7 +35,6 @@ namespace KCMSFood.Mobile.Services
 
         void RegisterRoutes()
         {
-            //Routing.RegisterRoute(nameof(HomeViewModel), typeof(HomePage));
             Routing.RegisterRoute(nameof(CategoriesViewModel), typeof(CategoriesPage));
             Routing.RegisterRoute(nameof(CategoryFormViewModel), typeof(CategoryFormPage));
             Routing.RegisterRoute(nameof(ProductsViewModel), typeof(ProductsPage));

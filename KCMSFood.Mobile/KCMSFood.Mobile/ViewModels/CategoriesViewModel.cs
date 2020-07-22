@@ -69,13 +69,11 @@ namespace KCMSFood.Mobile.ViewModels
         private async Task EditCommandExecute(CategoryModel category)
         {
             Debug.WriteLine(category);
-            //await Navigation.GoToRootAsync();
             await Navigation.GoToAsync("CategoryFormViewModel", category);
         }
 
         private async Task AddCommandExecute()
         {
-            //await Navigation.GoToRootAsync();
             await Navigation.GoToAsync("CategoryFormViewModel");
         }
 

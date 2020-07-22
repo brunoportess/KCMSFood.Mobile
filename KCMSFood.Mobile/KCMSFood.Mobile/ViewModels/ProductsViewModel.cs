@@ -71,10 +71,9 @@ namespace KCMSFood.Mobile.ViewModels
             }
         }
 
-        private async Task EditCommandExecute(ProductModel category)
+        private async Task EditCommandExecute(ProductModel product)
         {
-            Debug.WriteLine(category);
-            await Navigation.GoToAsync("ProductsFormViewModel", category);
+            await Navigation.GoToAsync("ProductFormViewModel", product);
         }
 
         private async Task AddCommandExecute()
